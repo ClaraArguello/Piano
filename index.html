@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Online</title>
+    <link 
+        rel="icon" 
+        type="image/png"  
+        href="/assets/piano.png"
+        data-href-light="/assets/piano.png"
+        data-href-dark="/assets/piano-dark.png"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function(){if("not-all"!==window.matchMedia("(prefers-color-scheme").media){var a=window.matchMedia("(prefers-color-scheme: dark)"),d=document.querySelectorAll('link[rel="icon"]'),c=function(){var e=a.matches?"hrefDark":"hrefLight";Array.prototype.slice.call(d).forEach(function(b){b.href=b.dataset[e]})};a.addEventListener("change",c);c()}})();
+    </script>
+</head>
+<body>
+    <main>
+        <div class="darkMode">
+            <svg class="btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#fff">
+                <mask id="m">
+                  <circle class="masker" cx="7.5" cy="7.5" r="8.5" fill="#fff" />
+                </mask>
+                <g mask="url(#m)">
+                  <path class="sun" d="M7.5 1.5v-1m0 13.99v-.998m6-5.997h1m-13 0h-1m2-4.996l-1-1m12 0l-1 1m-10 9.993l-1 1m12 0l-1-1m-2-4.997a2.999 2.999 0 01-3 2.998 2.999 2.999 0 113-2.998z" />  
+                </g>
+                <path class="moon" d="M1.66 11.362A6.5 6.5 0 007.693.502a7 7 0 11-6.031 10.86z" />  
+              </svg>
+        </div>
+        <ul id="piano">
+            <li data-note="C4" class="key">D
+                <div data-note="C#4" class="black-key">R</div>
+            </li>
+            <li data-note="D4" class="key">F
+                <div data-note="D#4" class="black-key">T</div>
+            </li>
+            <li data-note="E4" class="key">G</li>
+            <li data-note="F4" class="key">H
+                <div data-note="F#4" class="black-key">U</div>
+            </li>
+            <li data-note="G4" class="key">J
+                <div data-note="G#4" class="black-key">I</div>
+            </li>
+            <li data-note="A4" class="key">K
+                <div data-note="A#4" class="black-key">O</div>
+            </li>
+            <li data-note="B4" class="key">L</li>
+        </ul>
+    </main>
+</body>
+<script src="http://unpkg.com/tone"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+<script src="index.js"></script>
+<script src="darkMode.js"></script>
+</html>
